@@ -1,1 +1,6 @@
 requests
+langgraph>=0.0.1
+langchain-community>=0.0.1
+langchain-core>=0.0.1
+langchain-ollama>=0.0.1
+datasets>=2.18.0

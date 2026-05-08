@@ -1,0 +1,16 @@
+[
+  {
+    "attempt": 1,
+    "tests": [
+      "assert below_threshold([1, 2, 4, 10], 100) == True",
+      "assert below_threshold([1, 20, 4, 10], 5) == False",
+      "assert below_threshold([], 10) == True",
+      "assert below_threshold([5], 5) == False",
+      "assert below_threshold([-5, -3], -2) == True"
+    ],
+    "code": "def below_threshold(l: list, t: int) -> bool:\n    \"\"\"Return True if all numbers in the list l are strictly below threshold t.\"\"\"\n    return all(x < t for x in l)",
+    "passed": 1,
+    "error_type": "None",
+    "errors": []
+  }
+]

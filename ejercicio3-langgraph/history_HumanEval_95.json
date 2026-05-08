@@ -1,0 +1,48 @@
+[
+  {
+    "attempt": 1,
+    "tests": [
+      "assert check_dict_case({\"a\": \"apple\", \"b\": \"banana\"}) is True",
+      "assert check_dict_case({\"A\": \"APPLE\", \"B\": \"BANANA\"}) is True",
+      "assert check_dict_case({\"a\": \"apple\", \"A\": \"banana\"}) is False",
+      "assert check_dict_case({\"a\": \"apple\", 8: \"banana\"}) is False",
+      "assert check_dict_case({}) is False"
+    ],
+    "code": "```python\ndef check_dict_case(dict):\n    if not dict:\n        return False\n    \n    keys = dict.keys()\n    \n    # Check if all keys are strings\n    if not all(isinstance(key, str) for key in keys):\n        return False\n    \n    # Check if all keys are lowercase or all uppercase\n    all_lower = all(key.islower() for key in keys)\n    all_upper = all(key.isupper() for key in keys)\n    \n    return all_lower or all_upper\n```",
+    "passed": 0,
+    "error_type": "SyntaxError",
+    "errors": [
+      "SyntaxError: invalid syntax (<string>, line 14)"
+    ]
+  },
+  {
+    "attempt": 2,
+    "tests": [
+      "assert check_dict_case({\"a\": \"apple\", \"b\": \"banana\"}) is True",
+      "assert check_dict_case({\"A\": \"APPLE\", \"B\": \"BANANA\"}) is True",
+      "assert check_dict_case({\"a\": \"apple\", \"A\": \"banana\"}) is False",
+      "assert check_dict_case({\"a\": \"apple\", 8: \"banana\"}) is False",
+      "assert check_dict_case({}) is False"
+    ],
+    "code": "```python\ndef check_dict_case(dict):\n    if not dict:\n        return False\n    \n    keys = dict.keys()\n    \n    # Check if all keys are strings\n    if not all(isinstance(key, str) for key in keys):\n        return False\n    \n    # Check if all keys are lowercase or all keys are uppercase\n    all_lower = all(key.islower() for key in keys)\n    all_upper = all(key.isupper() for key in keys)\n    \n    return all_lower or all_upper\n```",
+    "passed": 0,
+    "error_type": "SyntaxError",
+    "errors": [
+      "SyntaxError: invalid syntax (<string>, line 14)"
+    ]
+  },
+  {
+    "attempt": 3,
+    "tests": [
+      "assert check_dict_case({\"a\": \"apple\", \"b\": \"banana\"}) is True",
+      "assert check_dict_case({\"A\": \"APPLE\", \"B\": \"BANANA\"}) is True",
+      "assert check_dict_case({\"a\": \"apple\", \"A\": \"banana\"}) is False",
+      "assert check_dict_case({\"a\": \"apple\", 8: \"banana\"}) is False",
+      "assert check_dict_case({}) is False"
+    ],
+    "code": "def check_dict_case(d):\n    if not d:\n        return False\n\n    keys = d.keys()\n\n    all_lower = all(isinstance(k, str) and k.islower() for k in keys)\n    all_upper = all(isinstance(k, str) and k.isupper() for k in keys)\n\n    return all_lower or all_upper",
+    "passed": 1,
+    "error_type": "None",
+    "errors": []
+  }
+]
