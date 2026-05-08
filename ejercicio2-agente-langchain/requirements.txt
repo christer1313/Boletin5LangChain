@@ -1,0 +1,7 @@
+langchain
+huggingface_hub
+python-dotenv
+flask
+langchain
+pymongo
+requests
